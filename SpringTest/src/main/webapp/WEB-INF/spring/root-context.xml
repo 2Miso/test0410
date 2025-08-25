@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean class="com.example.ezen.Car">
+		<constructor-arg name="a" value="spring"/>
+		<constructor-arg index="1" value="2.5"  /> <!-- index="1"은 두번째 파라미트(인덱스는 0부터 시작하니까) -->
+		<property name="name" value="BMW"/>
+		<!-- setName -> set지우고 Name -> 다 소문자로 name. setName메소드를 부른다. this.name=name으로 name 필드에 값 넣는 메소드 이름이 setA이면 name="a"로 써야 함. -->
+		<property name="plate" value="9999"/>
+	</bean>
+	<!-- com.example.ezen.Car클래스를 스프링에서 관리하게끔 bean으로 등록 -->
+	<!-- bean은 항상 이름이 있다. 클래스의 첫 문자를 소문자로 바꾼 게 이름이다. -->
+	<!-- 
+		Car car = new Car("spring", 2.5);
+		car.setName("BMW");
+		car.setPlate("BMW");
+	 -->
+</beans>
